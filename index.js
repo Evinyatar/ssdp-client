@@ -28,7 +28,7 @@ function SSDPClient(opts) {
                 body.forEach(function(line) {
                     var m = line.match(httpHeader);
                     if(m) {
-                        data[m[1]] = m[2];
+                        data[m[1].toUpperCase()] = m[2];
                     }
                 });
 
@@ -82,7 +82,7 @@ function SSDPClient(opts) {
                     body.forEach(function(l) {
                         var p = l.match(httpHeader);
                         if(p) {
-                            data[p[1]] = p[2];
+                            data[p[1].toUpperCase()] = p[2];
                         }
                     });
                     
