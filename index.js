@@ -36,7 +36,9 @@ function SSDPClient(opts) {
             }
         });
 
-        client.bind(multicastPort, multicastHost);
+        client.bind(multicastPort, function() {
+            client.addMembership(multicastHost);
+        });
     }
 
     listenForNotifications(function(data) {
